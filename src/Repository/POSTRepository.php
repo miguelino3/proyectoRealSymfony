@@ -38,6 +38,17 @@ class POSTRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+//Estas funciones que creamos, en REPOSITORIO, son a las que llamaremos luego en los 'Controllers'
+// [se añadirán a la misma lista que aparece al llamar a las funciones de la clase EntityManagerInterface]
+    public function findPost($id){
+        return $this->getEntityManager()
+            ->createQuery('
+                SELECT post.id, post.titulo, post.tipo, post.descripcion
+                FROM App:POST post
+                WHERE post.id = :id
+            ')->setParameter('id', $id)
+        ->getResult();
+    }
 
 //    /**
 //     * @return POST[] Returns an array of POST objects

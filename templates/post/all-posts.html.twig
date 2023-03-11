@@ -5,13 +5,15 @@
     </head>
     <body>
         <h1>Todos los POSTS</h1>
-        {% for post of posts %}
+        {% for post in posts %}
             <div class="post">
                 <h2><b>{{ post.id }}</b> - {{ post.titulo }}</h2>
                 <br>
                 <p>{{ post.descripcion }}</p>
                 <br><br>
-                <a href="{{ route('all_posts') }}">Ver todos los posts!</a>
+                <a href="{{ path('app_post', {
+                    id: post.id
+                }) }}">Ver este post</a>
             </div>
         {% endfor %}
     </body>

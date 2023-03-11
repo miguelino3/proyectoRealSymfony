@@ -32,10 +32,13 @@ class PostController extends AbstractController
             //con datos del POST en la BBDD, con el ID indicado; muy útil oye
         ]);
     }
-    #[Route('/posts', name: 'all_posts')]
+    #[Route('/all-posts', name: 'all_posts')]
     public function verTodos(): Response {
+        $posts = $this->em->getRepository(POST::class)->findAll();
         return $this->render('post/all-posts.html.twig', [
-            'posts' => $this->em->getRepository(POST::class)->findAll()
+            'posts' => $posts
         ]);
     }
+
+
 }
