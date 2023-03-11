@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name['nombre'] }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/proyectoRealSYMFONY/proyectoRealSYMFONY/src/Controller/PostController.php'|file_link(0) }}">src/Controller/PostController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/proyectoRealSYMFONY/proyectoRealSYMFONY/templates/post/index.html.twig'|file_link(0) }}">templates/post/index.html.twig</a></code></li>
+    </ul>
+</div>
+    {{ dump(post) }}
+    <div class="post">
+        <h2><b>{{ post.id }}</b> - {{ post.titulo }}</h2>
+        <br>
+        <p>{{ post.descripcion }}</p>
+        <br><br>
+        <a href="127.0.0.1:8000/posts/">Ver todos los posts!</a>
+    </div>
+{% endblock %}

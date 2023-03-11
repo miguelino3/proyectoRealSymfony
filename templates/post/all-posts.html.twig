@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MiBloggo - TODOS LOS POSTS</title>
+    </head>
+    <body>
+        <h1>Todos los POSTS</h1>
+        {% for post of posts %}
+            <div class="post">
+                <h2><b>{{ post.id }}</b> - {{ post.titulo }}</h2>
+                <br>
+                <p>{{ post.descripcion }}</p>
+                <br><br>
+                <a href="127.0.0.1:8000/posts/">Ver todos los posts!</a>
+            </div>
+        {% endfor %}
+    </body>
+</html>
